@@ -1,9 +1,6 @@
 package com.mber.springcourse.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Post {
@@ -11,7 +8,9 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String title, anons, full_text;
+    private String title;
+    @Lob
+    private String anons, full_text;
     private int views;
 
     public Post() {
