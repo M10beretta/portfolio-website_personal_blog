@@ -1,8 +1,9 @@
+/*
 package com.mber.springcourse.controller;
 
-import com.mber.springcourse.entity.post.Post;
-import com.mber.springcourse.entity.post.PostRepository;
-import com.mber.springcourse.entity.post.PostService;
+import com.mber.springcourse.component.post.Post;
+import com.mber.springcourse.component.post.PostRepository;
+import com.mber.springcourse.component.post.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,11 +15,7 @@ public class PostController {
     private final PostRepository repository;
     private final PostService service;
 
-    @GetMapping("/blog")
-    public String getAll(Model model) {
-        model.addAttribute("posts", service.getAll());
-        return "blog-main";
-    }
+
 
 
     @PostMapping("/blog/add")
@@ -56,3 +53,4 @@ public class PostController {
         return "redirect:/blog";
     }
 }
+*/

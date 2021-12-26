@@ -1,12 +1,12 @@
-package com.mber.springcourse.entity.post;
+package com.mber.springcourse.component.post;
 
 import java.util.Optional;
 
 public interface PostService {
 
-    Iterable<Post> getAll();
-
     Optional<Post> getById(long id);
+
+    Iterable<Post> getAll();
 
     void save(Post post);
 

@@ -1,4 +1,4 @@
-package com.mber.springcourse.entity.post;
+package com.mber.springcourse.component.post;
 
 import lombok.*;
 

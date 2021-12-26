@@ -1,57 +1,57 @@
 package com.mber.springcourse.controller;
 
-import com.mber.springcourse.entity.post.Post;
-import com.mber.springcourse.entity.post.PostService;
+import com.mber.springcourse.component.post.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
-import java.util.ArrayList;
-import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
 public class HomeController {
-    private final PostService postService;
+    private final PostService service;
 
     @GetMapping("/")
-    public String onHomePage(Model model) {
-        model.addAttribute("title", "Home page");
+    public String onHome() {
         return "home";
     }
 
-    @GetMapping("/blog/add")
-    public String onBlogAddPage(Model model) {
-        return "blog_add";
+    @GetMapping("/posts")
+    public String onPostAll(Model model) {
+        model.addAttribute("posts", service.getAll());
+        return "post_all";
     }
 
-
-    @GetMapping("/blog/{id}")
-    public String onBlogDetailsPage(@PathVariable(value = "id") long id, Model model) {
-        if (postService.notExistById(id)) {
-            Optional<Post> post = postService.getById(id);
-            ArrayList<Post> res = new ArrayList<>();
-            post.ifPresent(res::add);
-            model.addAttribute("post", res);
-            return "redirect:/blog";
-        }
-        return "blog-details";
+    @GetMapping("/post/add")
+    public String onPostAdd() {
+        return "post_add";
     }
-
-
-    @GetMapping("/blog/{id}/edit")
-    public String onBlogEditPage(@PathVariable(value = "id") long id, Model model) {
-        if (postService.notExistById(id)) {
-            Optional<Post> post = postService.getById(id);
-            ArrayList<Post> res = new ArrayList<>();
-            post.ifPresent(res::add);
-            model.addAttribute("post", res);
-            return "redirect:/blog";
-        }
-        return "blog-edit";
-    }
+//
+//
+//    @GetMapping("/blog/{id}")
+//    public String onBlogDetailsPage(@PathVariable(value = "id") long id, Model model) {
+//        if (service.notExistById(id)) {
+//            Optional<Post> post = service.getById(id);
+//            ArrayList<Post> res = new ArrayList<>();
+//            post.ifPresent(res::add);
+//            model.addAttribute("post", res);
+//            return "redirect:/blog";
+//        }
+//        return "blog-details";
+//    }
+//
+//
+//    @GetMapping("/blog/{id}/edit")
+//    public String onBlogEditPage(@PathVariable(value = "id") long id, Model model) {
+//        if (service.notExistById(id)) {
+//            Optional<Post> post = service.getById(id);
+//            ArrayList<Post> res = new ArrayList<>();
+//            post.ifPresent(res::add);
+//            model.addAttribute("post", res);
+//            return "redirect:/blog";
+//        }
+//        return "blog-edit";
+//    }
 
 
 

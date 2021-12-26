@@ -1,13 +1,14 @@
+<!--
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Details of the article</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 
 <body>
-<header th:insert="blocks/header :: header"></header>
+<header th:insert="fragment/header :: header"></header>
 <div class="container mt-5">
     <div th:each="el : ${post}" class="alert alert-info mt-2">
         <h3 th:text="${el.title}"></h3>
@@ -24,7 +25,8 @@
         </form>
     </div>
 </div>
-<div th:insert="blocks/footer :: footer"></div>
+<div th:insert="fragment/footer :: footer"></div>
 </body>
 </html>
 
+-->
