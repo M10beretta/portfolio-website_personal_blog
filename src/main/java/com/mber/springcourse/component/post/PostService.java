@@ -10,5 +10,7 @@ public interface PostService {
 
     void save(Post post);
 
-    boolean notExistById(long id);
+    void deleteById(long id);
+
+    boolean existById(long id);
 }

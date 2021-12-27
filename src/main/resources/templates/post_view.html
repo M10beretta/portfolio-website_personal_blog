@@ -1,8 +1,7 @@
-<!--
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Details of the article</title>
+    <title>Viewing post</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
@@ -10,17 +9,17 @@
 <body>
 <header th:insert="fragment/header :: header"></header>
 <div class="container mt-5">
-    <div th:each="el : ${post}" class="alert alert-info mt-2">
-        <h3 th:text="${el.title}"></h3>
-        <p th:text="${el.text}"></p>
+    <div th:each="p : ${post}" class="alert alert-info mt-2">
+        <h3 th:text="${p.title}"></h3>
+        <p th:text="${p.text}"></p>
         <p>
             <b>Views:</b>
-            <span th:text="${el.views}"></span>
+            <span th:text="${p.views}"></span>
         </p>
-        <a th:href="'/blog/' + ${el.id} + '/edit'" class="btn btn-warning">Edit</a>
+        <a th:href="'/post/' + ${p.id} + '/edit'" class="btn btn-warning">Edit</a>
         <br>
         <br>
-        <form th:action="'/blog/'+${el.id}+'/remove'" method="post">
+        <form th:action="'/post/'+${p.id}+'/remove'" method="post">
             <button class="btn btn-warning" type="submit">Remove</button>
         </form>
     </div>
@@ -29,4 +28,3 @@
 </body>
 </html>
 
--->

@@ -5,16 +5,18 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.Objects;
 
+
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-@ToString
+@Builder
 @Entity
 public class Post {
     @ToString.Exclude
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private long id;
 
     private String title;
     @Lob
@@ -23,12 +25,6 @@ public class Post {
     private String text;
 
     private int views;
-
-    public Post(String title, String anons, String text) {
-        this.title = title;
-        this.anons = anons;
-        this.text = text;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -43,3 +39,4 @@ public class Post {
         return Objects.hash(id);
     }
 }
+

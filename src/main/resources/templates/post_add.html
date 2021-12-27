@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Add</title>
+    <title>Adding post</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
@@ -10,13 +10,13 @@
 <header th:insert="fragment/header :: header"></header>
 
 <div class="container mt-5 mb-5">
-    <h1>Adding an article</h1>
+    <h1>Adding post</h1>
     <form action="/post/add" method="post">
-        <input type="text" name="title" placeholder="Enter the title of the article" class="form-control">
+        <input type="text" name="title" placeholder="Enter post title" class="form-control">
         <br>
-        <input type="text" name="anons" placeholder="Enter the article announcement" class="form-control">
+        <input type="text" name="anons" placeholder="Enter post announcement" class="form-control">
         <br>
-        <textarea name="full_text" placeholder="Enter the full text of the article" class="form-control"></textarea>
+        <textarea name="text" placeholder="Enter post full text" class="form-control"></textarea>
         <br>
         <button type="submit" class="btn btn-success">Add</button>
     </form>

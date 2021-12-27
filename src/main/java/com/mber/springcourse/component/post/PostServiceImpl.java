@@ -26,8 +26,12 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public boolean notExistById(long id) {
-        return !repository.existsById(id);
+    public boolean existById(long id) {
+        return repository.existsById(id);
     }
 
+    @Override
+    public void deleteById(long id) {
+        repository.deleteById(id);
+    }
 }

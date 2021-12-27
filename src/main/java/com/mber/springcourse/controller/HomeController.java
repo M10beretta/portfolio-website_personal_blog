@@ -26,35 +26,6 @@ public class HomeController {
     public String onPostAdd() {
         return "post_add";
     }
-//
-//
-//    @GetMapping("/blog/{id}")
-//    public String onBlogDetailsPage(@PathVariable(value = "id") long id, Model model) {
-//        if (service.notExistById(id)) {
-//            Optional<Post> post = service.getById(id);
-//            ArrayList<Post> res = new ArrayList<>();
-//            post.ifPresent(res::add);
-//            model.addAttribute("post", res);
-//            return "redirect:/blog";
-//        }
-//        return "blog-details";
-//    }
-//
-//
-//    @GetMapping("/blog/{id}/edit")
-//    public String onBlogEditPage(@PathVariable(value = "id") long id, Model model) {
-//        if (service.notExistById(id)) {
-//            Optional<Post> post = service.getById(id);
-//            ArrayList<Post> res = new ArrayList<>();
-//            post.ifPresent(res::add);
-//            model.addAttribute("post", res);
-//            return "redirect:/blog";
-//        }
-//        return "blog-edit";
-//    }
-
-
-
 }
 
 
